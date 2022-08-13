@@ -179,11 +179,47 @@ public class Traversal {
                 if (p.right != null) queue.add(p.right);
                 size--;
             }
-            res.add(sum/divide);
+            res.add(sum / divide);
         }
         return res;
     }
 
     // 每个树行中找最大值
+
     // 填充每个节点的下一个右侧节点指针
+
+    // 二叉树锯齿形层序遍历
+    // 思路：用双头队列，计数层高，从队尾入队，队头出队，偶数层反一下，队头入队，队尾出队，然后选择好入队顺序（先左后右还是先右后左）
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        Deque<TreeNode> queue = new LinkedList<>();
+        TreeNode pnode = root;
+        queue.addLast(pnode);
+        int count = 1;
+        while (!queue.isEmpty()) {
+            List<Integer> temp = new ArrayList<>();
+            int size = queue.size();
+            while (size > 0) {
+                if (count % 2 == 1) {
+                    // 队尾入队，队头出队：孩子从队尾进，下一层从队尾出(先进后出)
+                    pnode = queue.removeFirst();
+                    temp.add(pnode.val);
+                    size--;
+                    if (pnode.left != null) queue.addLast(pnode.left);
+                    if (pnode.right != null) queue.addLast(pnode.right);
+                } else {
+                    // 队头入队，队尾出队:孩子从队头入，下一层从队头出（后进先出）
+                    pnode = queue.removeLast();
+                    temp.add(pnode.val);
+                    size--;
+                    if (pnode.right != null) queue.addFirst(pnode.right);
+                    if (pnode.left != null) queue.addFirst(pnode.left);
+                }
+            }
+            res.add(temp);
+            count++;
+        }
+        return res;
+    }
 }
