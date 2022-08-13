@@ -10,7 +10,7 @@ public class SensitiveFilter {
     public void testSensitiveFilter() {
         sensitiveFilter = new TrieTree();
         sensitiveFilter.init();
-        String text = "这里可以赌博,可以嫖娼,可以吸毒,可以开票,哈哈哈，日本人,日本鬼子，日!";
+        String text = "这里可以赌博,可以嫖娼,可以吸毒,可以开票,哈哈哈，日本人,日本鬼子，日，te,tea，赌，赌博!";
         text = sensitiveFilter.filter(text);
         System.out.println(text);
 

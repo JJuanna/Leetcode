@@ -57,7 +57,6 @@ public class TrieTree {
 
     /**
      * 过滤敏感词
-     *
      * @param text 待过滤的文本
      * @return 过滤后的文本
      */
@@ -100,12 +99,18 @@ public class TrieTree {
                 // 重新指向根节点
                 tempNode = rootNode;
             } else if (tempNode.isKeyWordEnd()) {
+                // 短词结束后面还有未匹配的(te and tea)----------------------加这一个条件判断解决
+                if(tempNode.getSubNode(text.charAt(position+1))!=null){
+                    // 检查下一个字符
+                    position++;
+                }
+                else{
                 // 发现敏感词,将begin~position字符串替换掉
                 sb.append(REPLACEMENT);
                 // 进入下一个位置
                 begin = ++position;
                 // 重新指向根节点
-                tempNode = rootNode;
+                tempNode = rootNode;}
             } else {
                 // 检查下一个字符
                 position++;
@@ -123,7 +128,7 @@ public class TrieTree {
         // 0x2E80~0x9FFF 是东亚文字范围
         //
 //        return !CharUtils.isAsciiAlphanumeric(c) && (c < 0x2E80 || c > 0x9FFF);
-        return (c < 0x2E80 || c > 0x9FFF);
+        return !Character.isAlphabetic(c) && (c < 0x2E80 || c > 0x9FFF);
 
     }
 
