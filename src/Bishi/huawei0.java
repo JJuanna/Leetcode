@@ -4,7 +4,7 @@ import javafx.beans.binding.ObjectExpression;
 
 import java.util.*;
 
-public class huawei {
+public class huawei0 {
     public static void main(String[] args) {
 //        跳台阶输入
 //        int[] nums = {2,1,1,5,6,2,3};
