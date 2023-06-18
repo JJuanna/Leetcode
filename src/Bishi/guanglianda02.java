@@ -11,6 +11,7 @@ public class guanglianda02 {
         int k = sc.nextInt();
         if (k == 1) System.out.println(0);
         if (k == 2) System.out.println(Math.min(n, m) * Math.min(n, m));
+//        if (k > n * m) System.out.println();
         System.out.println(compute(n, m, k));
     }
 

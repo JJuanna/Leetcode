@@ -2,6 +2,7 @@ package Bishi.tianyiyun;
 
 import java.util.Scanner;
 
+// 背包
 public class tianyiyun03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -39,6 +40,6 @@ public class tianyiyun03 {
                 }
             }
         }
-        return dp[m-1][n];
+        return dp[m - 1][n];
     }
 }

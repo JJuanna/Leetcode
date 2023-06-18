@@ -88,7 +88,7 @@ public class strMatch {
         return -1;
     }
 
-    private int[] getNext(String needle, int m) {
+    private static int[] getNext(String needle, int m) {
         int[] next = new int[m];
         next[0] = -1;
         // k指向前缀末尾位置
@@ -105,5 +105,24 @@ public class strMatch {
             next[i] = k;
         }
         return next;
+    }
+
+    private static int[] GetNext(String s, int length) {// length为串ch的长度
+        int[] next = new int[length+1];
+        next[1] = 0;
+        int i = 1, j = 0;//i为当前正在匹配的字符位置，也就是next数组的索引
+        while (i < length) {
+            if (j == 0 || s.charAt(i) == s.charAt(j)) next[++i] = ++j;
+            else j = next[j];
+        }
+        return next;
+    }
+
+    public static void main(String[] args) {
+        String s = "aaab";
+        int[] m = GetNext(s, s.length());
+        for (int i = 1; i <= s.length(); i++) {
+            System.out.println(m[i]);
+        }
     }
 }
