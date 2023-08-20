@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no876 {
     public static class ListNode {

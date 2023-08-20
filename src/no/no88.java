@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no88 {
     // 从右向左合并

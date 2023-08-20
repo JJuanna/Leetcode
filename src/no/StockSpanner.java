@@ -1,8 +1,6 @@
-package num;
+package no;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 public class StockSpanner {
     LinkedList<Integer> list;

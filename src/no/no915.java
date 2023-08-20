@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no915 {
     // 分割数组

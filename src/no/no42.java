@@ -1,6 +1,5 @@
-package num;
+package no;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class no42 {

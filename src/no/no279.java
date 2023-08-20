@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no279 {
     public static void main(String[] args) {

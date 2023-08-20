@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no53 {
     // 动态规划优化版

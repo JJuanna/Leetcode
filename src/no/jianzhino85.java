@@ -1,6 +1,4 @@
-package num;
-
-import java.util.List;
+package no;
 
 public class jianzhino85 {
     public static void main(String[] args) {

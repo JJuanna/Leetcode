@@ -1,7 +1,4 @@
-package num;
-
-import java.util.HashMap;
-import java.util.Map;
+package no;
 
 public class no12 {
     public String intToRoman(int num) {

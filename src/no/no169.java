@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no169 {
     public static int majorityElement(int[] nums) {

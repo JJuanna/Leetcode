@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no122 {
     // 贪心思想，求两天之间的利润，利润为负，不加，利润为正，加

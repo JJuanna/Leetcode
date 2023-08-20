@@ -1,4 +1,4 @@
-package num;
+package no;
 
 import java.util.Arrays;
 

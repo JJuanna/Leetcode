@@ -1,4 +1,4 @@
-package num;
+package no;
 
 public class no376 {
     public int wiggleMaxLength(int[] nums) {

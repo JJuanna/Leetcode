@@ -1,4 +1,4 @@
-package num;
+package no;
 
 import BinaryTree.TreeNode;
 
