@@ -49,4 +49,28 @@ public class binarySearch {
 
         // 如果想要将时间复杂度降低到O(log(m+n))呢？不进行归并的方法
     }
+
+    /**
+     * 找非降序旋转数组中的最小值
+     *
+     * @param nums
+     * @return
+     */
+    public int minNumberInRotateArray(int[] nums) {
+        // write code here
+        // 由于数组由两个递增数组组成，且后面的递增数组的所有值一定小于前面的递增数组的最小值，因此从数组最末一位向前遍历(时间复杂度O(n))
+        int left = 0, right = nums.length - 1;
+        int mid;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (nums[right] < nums[mid]) {
+                // mid在左边的增序数组中,最小值在mid右边[mid+1,right]
+                left = mid + 1;
+            } else if (nums[right] > nums[mid]) {
+                // mid在右边的增序数组中，最小值在mid的左边或就是mid,[left,mid]
+                right = mid;
+            } else right--;//如果nums[right]==nums[mid]无法判断最小值在哪边，那么缩小范围
+        }
+        return nums[left];
+    }
 }
